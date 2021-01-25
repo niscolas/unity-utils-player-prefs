@@ -1,4 +1,5 @@
-﻿using UnityAtoms.BaseAtoms;
+﻿using NaughtyAttributes;
+using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
 namespace Plugins.ScriptablePlayerPrefsEntry {
@@ -9,21 +10,13 @@ namespace Plugins.ScriptablePlayerPrefsEntry {
 		[SerializeField]
 		protected StringReference keyRef;
 
-		[SerializeField]
-		private T valueToSave;
+		[ShowNativeProperty]
+		public T SavedValue => Get();
 
 		public abstract T Get();
 
 		public abstract T Get(T defaultValue);
 
 		public abstract void Save(T value);
-
-		public void PrintGet() {
-			Debug.Log(Get());
-		}
-
-		public void SaveInspectorValue() {
-			Save(valueToSave);
-		}
 	}
 }
