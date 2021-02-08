@@ -1,8 +1,11 @@
-﻿using NaughtyAttributes;
-using UnityAtoms.BaseAtoms;
+﻿using UnityAtoms.BaseAtoms;
 using UnityEngine;
+#if ODIN_INSPECTOR
+using Sirenix.OdinInspector;
 
-namespace Plugins.ScriptablePlayerPrefsEntry {
+#endif
+
+namespace Plugins.ScriptablePlayerPrefs {
 	public abstract class BaseScriptablePlayerPrefsEntry<T> : ScriptableObject {
 		protected const int CreateAssetMenuOrder = -30;
 		protected const string BaseCreateAssetMenuPath = "Scriptable Player Prefs/";
@@ -10,8 +13,18 @@ namespace Plugins.ScriptablePlayerPrefsEntry {
 		[SerializeField]
 		protected StringReference keyRef;
 
-		[ShowNativeProperty]
+#if ODIN_INSPECTOR
+		[SerializeField]
+		private T valueToSave;
+		
+		[ShowInInspector]
 		public T SavedValue => Get();
+
+		[Button]
+		private void SaveValue() {
+			Save(valueToSave);
+		} 
+#endif
 
 		public abstract T Get();
 

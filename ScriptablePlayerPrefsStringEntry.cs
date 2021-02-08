@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Plugins.ScriptablePlayerPrefsEntry {
+namespace Plugins.ScriptablePlayerPrefs {
 	[CreateAssetMenu(menuName = BaseCreateAssetMenuPath + "Entry (string)", order = CreateAssetMenuOrder)]
 	public class ScriptablePlayerPrefsStringEntry : BaseScriptablePlayerPrefsEntry<string> {
 		public override string Get() {

@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 
-namespace Plugins.ScriptablePlayerPrefsEntry {
+namespace Plugins.ScriptablePlayerPrefs {
 	[CreateAssetMenu(menuName = BaseCreateAssetMenuPath + "Entry (Bool)", order = CreateAssetMenuOrder)]
-	class ScriptablePlayerPrefsBoolEntry : BaseScriptablePlayerPrefsEntry<bool> {
+	public class ScriptablePlayerPrefsBoolEntry : BaseScriptablePlayerPrefsEntry<bool> {
+		
 		public override bool Get() {
 			return GetIntAsBool(
 				PlayerPrefs.GetInt(keyRef.Value)
