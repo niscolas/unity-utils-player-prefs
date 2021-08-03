@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 namespace Plugins.ScriptablePlayerPrefs.MonoBehaviourHelpers {
 	public class BaseMonoPrefsRetriever<T, TPPE> : MonoBehaviour
-		where TPPE : BaseScriptablePlayerPrefsEntry<T> {
+		where TPPE : BasePlayerPrefsEntrySO<T> {
 		[SerializeField]
 		private TPPE scriptablePlayerPrefsEntry;
 

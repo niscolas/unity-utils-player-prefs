@@ -2,7 +2,7 @@
 
 namespace Plugins.ScriptablePlayerPrefs {
 	[CreateAssetMenu(menuName = BaseCreateAssetMenuPath + "Entry (Float)", order = CreateAssetMenuOrder)]
-	public class ScriptablePlayerPrefsFloatEntry : BaseScriptablePlayerPrefsEntry<float> {
+	public class PlayerPrefsFloatEntrySO : BasePlayerPrefsEntrySO<float> {
 		public override float Get() {
 			return PlayerPrefs.GetFloat(keyRef.Value);
 		}

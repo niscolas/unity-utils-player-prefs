@@ -2,7 +2,7 @@
 
 namespace Plugins.ScriptablePlayerPrefs {
 	[CreateAssetMenu(menuName = BaseCreateAssetMenuPath + "Entry (Int)", order = CreateAssetMenuOrder)]
-	class ScriptablePlayerPrefsIntEntry : BaseScriptablePlayerPrefsEntry<int> {
+	class ScriptablePlayerPrefsIntEntry : BasePlayerPrefsEntrySO<int> {
 		public override int Get() {
 			return PlayerPrefs.GetInt(keyRef.Value);
 		}
