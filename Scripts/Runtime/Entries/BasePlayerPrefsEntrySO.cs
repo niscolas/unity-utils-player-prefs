@@ -1,33 +1,28 @@
 ﻿using UnityAtoms.BaseAtoms;
 using UnityEngine;
-#if ODIN_INSPECTOR
 using Sirenix.OdinInspector;
 
-#endif
-
-namespace Plugins.ScriptablePlayerPrefs
+namespace niscolas.UnityUtils.PlayerPrefs
 {
     public abstract class BasePlayerPrefsEntrySO<T> : ScriptableObject
     {
-        protected const int CreateAssetMenuOrder = -30;
-        protected const string BaseCreateAssetMenuPath = "Scriptable Player Prefs/";
+        [SerializeField]
+        protected StringReference _key;
 
         [SerializeField]
-        protected StringReference keyRef;
-
-#if ODIN_INSPECTOR
-        [SerializeField]
-        private T valueToSave;
+        private T _valueToSave;
 
         [ShowInInspector]
+        private bool HasKey => UnityEngine.PlayerPrefs.HasKey(_key.Value);
+        
+        [ShowIf(nameof(HasKey)), ShowInInspector]
         public T SavedValue => Get();
 
         [Button]
         private void SaveValue()
         {
-            Save(valueToSave);
+            Save(_valueToSave);
         }
-#endif
 
         public abstract T Get();
 

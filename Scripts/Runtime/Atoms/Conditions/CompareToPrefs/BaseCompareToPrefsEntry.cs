@@ -1,5 +1,5 @@
 ﻿using niscolas.UnityUtils.Core;
-using Plugins.ScriptablePlayerPrefs;
+using niscolas.UnityUtils.PlayerPrefs;
 using UnityAtoms;
 using UnityEngine;
 
