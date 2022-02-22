@@ -2,11 +2,12 @@
 using niscolas.UnityUtils.UnityAtoms;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
+using Constants = niscolas.UnityUtils.UnityAtoms.Constants;
 
 namespace Plugins.UnityAtomsScriptablePrefsUtils.Conditions.CompareToPrefs
 {
     [CreateAssetMenu(
-        menuName = UnityAtomsConstants.ConditionsCreateAssetMenuPrefix + "(bool) => Compare Prefs Entry")]
+        menuName = Constants.ConditionsCreateAssetMenuPrefix + "(bool) => Compare Prefs Entry")]
     public class CompareBoolToBoolPrefsEntry : BaseCompareToPrefsEntry<
         bool,
         BoolPair,

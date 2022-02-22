@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Plugins.UnityAtomsScriptablePrefsUtils.Conditions.CompareToPrefs
 {
-    [CreateAssetMenu(menuName = UnityAtomsConstants.ConditionsCreateAssetMenuPrefix + "(int) => Compare to Int Prefs Entry")]
+    [CreateAssetMenu(menuName = Constants.ConditionsCreateAssetMenuPrefix + "(int) => Compare to Int Prefs Entry")]
     public class CompareIntToIntPrefsEntry : BaseCompareToPrefsEntry<
         int,
         IntPair,
